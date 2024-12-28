@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="618.0" prefWidth="901.0" style="-fx-background-color: #ccc;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.BookController">
+   <children>
+      <Pane layoutX="8.0" layoutY="7.0" prefHeight="278.0" prefWidth="886.0" style="-fx-background-color: #fff; -fx-background-radius: 10px;">
+         <children>
+            <Label layoutX="32.0" layoutY="10.0" text="Book ID" />
+            <Label layoutX="32.0" layoutY="76.0" text="Genre ID" />
+            <Label layoutX="295.0" layoutY="10.0" text="Author" />
+            <Label layoutX="32.0" layoutY="136.0" text="Title" />
+            <Label layoutX="533.0" layoutY="10.0" text="Publisher" />
+            <Label layoutX="293.0" layoutY="76.0" text="Price" />
+            <Label layoutX="291.0" layoutY="128.0" text="Stock" />
+
+            <TextField fx:id="txt_book_id" layoutX="32.0" layoutY="34.0" />
+            <ComboBox fx:id="cbo_genre_id" layoutX="32.0" layoutY="97.0" prefWidth="150.0" />
+            <TextField fx:id="txt_author" layoutX="294.0" layoutY="34.0" />
+            <TextField fx:id="txt_title" layoutX="32.0" layoutY="154.0" />
+            <TextField fx:id="txt_publisher" layoutX="533.0" layoutY="34.0" />
+            <TextField fx:id="txt_price" layoutX="294.0" layoutY="97.0" />
+            <TextField fx:id="txt_stock" layoutX="294.0" layoutY="154.0" />
+            <Button fx:id="btnImage" layoutX="571.0" layoutY="215.0" mnemonicParsing="false" onMouseClicked="#click_upimage_btn" text="Add Image" />
+
+            <Button fx:id="btnInsert" layoutX="35.0" layoutY="215.0" mnemonicParsing="false" onMouseClicked="#click_add_btn" text="Add" />
+            <Button fx:id="btnUpdate" layoutX="174.0" layoutY="215.0" mnemonicParsing="false" onMouseClicked="#click_update_btn" text="Update" />
+            <Button fx:id="btnDelete" layoutX="306.0" layoutY="215.0" mnemonicParsing="false" onMouseClicked="#click_delete_btn" text="Delete" />
+            <Button fx:id="btnClear" layoutX="432.0" layoutY="215.0" mnemonicParsing="false" onMouseClicked="#click_clear_btn" text="Clear" />
+            <Pane layoutX="532.0" layoutY="77.0" prefHeight="118.0" prefWidth="150.0" style="-fx-background-color: #ccc; -fx-background-radius: 10px;">
+               <children>
+                  <ImageView fx:id="img" fitHeight="108.0" fitWidth="137.0" layoutX="7.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane layoutX="8.0" layoutY="293.0" prefHeight="317.0" prefWidth="886.0" style="-fx-background-color: #fff; -fx-background-radius: 10px;">
+         <children>
+            <TableView fx:id="tb_view" layoutX="8.0" layoutY="13.0" prefHeight="295.0" prefWidth="864.0" style="-fx-background-radius: 10px;">
+              <columns>
+                <TableColumn fx:id="colBookID" prefWidth="51.20004463195801" text="Book ID" />
+                <TableColumn fx:id="colTitle" prefWidth="107.99999237060547" text="Title" />
+                <TableColumn fx:id="colAuthor" minWidth="0.0" prefWidth="107.19998168945312" text="Author" />
+                <TableColumn fx:id="colGenreID" minWidth="0.0" prefWidth="88.79995727539062" text="Genre ID" />
+                <TableColumn fx:id="colPublisher" minWidth="0.0" prefWidth="113.60003662109375" text="Publisher" />
+                <TableColumn fx:id="colPrice" minWidth="0.0" prefWidth="107.19998168945312" text="Price" />
+                <TableColumn fx:id="colStock" minWidth="0.0" prefWidth="86.39996337890625" text="Stock" />
+                  <TableColumn fx:id="ColImg" minWidth="0.0" prefWidth="203.20001220703125" text="Image" />
+              </columns>
+            </TableView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

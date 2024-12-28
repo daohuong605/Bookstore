@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="618.0" prefWidth="901.0" style="-fx-background-color: #ccc;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.OrderController">
+   <children>
+      <Pane layoutX="8.0" layoutY="11.0" prefHeight="162.0" prefWidth="886.0" style="-fx-background-color: #fff; -fx-background-radius: 10px;">
+         <children>
+            <Label layoutX="265.0" layoutY="31.0" text="ORDER MANAGEMENT">
+               <font>
+                  <Font name="System Bold Italic" size="30.0" />
+               </font></Label>
+            <Label layoutX="344.0" layoutY="76.0" />
+            <Label layoutX="573.0" layoutY="76.0" />
+            
+            <Button fx:id="btnInsert" layoutX="197.0" layoutY="98.0" mnemonicParsing="false" onMouseClicked="#ClickInsert" prefHeight="39.0" prefWidth="68.0" text="Add" />
+            <Button fx:id="btnDelete" layoutX="485.0" layoutY="98.0" mnemonicParsing="false" onMouseClicked="#ClickDelete" prefHeight="39.0" prefWidth="68.0" text="Delete" />
+            <Button fx:id="btnClose" layoutX="634.0" layoutY="98.0" mnemonicParsing="false" onMouseClicked="#ClickClose" prefHeight="39.0" prefWidth="68.0" text="Close" />
+            <Button fx:id="btnUpdate" layoutX="344.0" layoutY="98.0" mnemonicParsing="false" onMouseClicked="#ClickUpdate" prefHeight="39.0" prefWidth="68.0" text="Update" />
+         </children>
+      </Pane>
+      <Pane layoutX="8.0" layoutY="185.0" prefHeight="425.0" prefWidth="886.0" style="-fx-background-color: #fff; -fx-background-radius: 10px;">
+         <children>
+            <TableView fx:id="tbaOrder" layoutX="8.0" layoutY="13.0" prefHeight="399.0" prefWidth="870.0" style="-fx-background-radius: 10px;">
+              <columns>
+                <TableColumn fx:id="orderIdColumn" prefWidth="134.0" text="Order ID" />
+                <TableColumn fx:id="customerNameColumn" prefWidth="183.0" text="Customer Name" />
+                  <TableColumn fx:id="employeeNameColumn" minWidth="0.0" prefWidth="130.0" text="Employee Name" />
+                  <TableColumn fx:id="orderDateColumn" minWidth="0.0" prefWidth="132.0" text="Date" />
+                  <TableColumn fx:id="totalAmountColumn" minWidth="0.0" prefWidth="138.0" text="Total" />
+                  <TableColumn fx:id="statusColumn" minWidth="0.0" prefWidth="152.0" text="Status" />
+              </columns>
+            </TableView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

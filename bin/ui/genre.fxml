@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.GenreController">
+   <children>
+      <AnchorPane layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="618.0" prefWidth="901.0" style="-fx-background-color: #ccc;">
+         <children>
+            <Pane layoutX="8.0" layoutY="11.0" prefHeight="271.0" prefWidth="886.0" style="-fx-background-color: #fff; -fx-background-radius: 10px;">
+               <children>
+                  <TextField fx:id="txtID" layoutX="261.0" layoutY="105.0" prefHeight="31.0" prefWidth="186.0" promptText="Genre ID" />
+                  <Label layoutX="524.0" layoutY="84.0" text="Genre Name" />
+                  <TextField fx:id="txtName" layoutX="522.0" layoutY="105.0" prefHeight="31.0" prefWidth="186.0" />
+                  <Button layoutX="261.0" layoutY="209.0" mnemonicParsing="false" onMouseClicked="#ClickInsert" text="Add" />
+                  <Button layoutX="351.0" layoutY="209.0" mnemonicParsing="false" onMouseClicked="#ClickUpdate" text="Update" />
+                  <Button layoutX="468.0" layoutY="209.0" mnemonicParsing="false" onMouseClicked="#ClickDelete" text="Delete" />
+                  <Button fx:id="btnClose" layoutX="575.0" layoutY="209.0" mnemonicParsing="false" onMouseClicked="#ClickClose" text="Close" />
+               </children>
+            </Pane>
+            <Pane layoutX="8.0" layoutY="293.0" prefHeight="317.0" prefWidth="886.0" style="-fx-background-color: #fff; -fx-background-radius: 10px;">
+               <children>
+                  <TableView fx:id="tbaView" layoutX="148.0" layoutY="35.0" onMouseClicked="#ClickTableView" prefHeight="264.0" prefWidth="709.0">
+                    <columns>
+                      <TableColumn prefWidth="152.0" text="C1" />
+                      <TableColumn prefWidth="77.0" text="C2" />
+                        <TableColumn prefWidth="127.0" text="C2" />
+                    </columns>
+                  </TableView>
+                  <Label fx:id="txtTitle" layoutX="14.0" layoutY="14.0" text="Genre List">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

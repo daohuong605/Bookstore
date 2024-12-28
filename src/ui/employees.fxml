@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="618.0" prefWidth="901.0" style="-fx-background-color: #ccc;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EmployeeController">
+   <children>
+      <Pane layoutX="8.0" layoutY="11.0" prefHeight="271.0" prefWidth="886.0" style="-fx-background-color: #fff; -fx-background-radius: 10px;">
+         <children>
+            <Label layoutX="32.0" layoutY="10.0" text="Employee name" />
+            <Label layoutX="32.0" layoutY="76.0" text="Sex" />
+            <Label layoutX="344.0" layoutY="10.0" text="DOB" />
+            <Label layoutX="344.0" layoutY="76.0" text="Citizen ID" />
+            <Label layoutX="573.0" layoutY="76.0" text="Position" />
+            <Label layoutX="573.0" layoutY="10.0" text="Phone number" />
+            
+            <Button fx:id="btnInsert" layoutX="206.0" layoutY="215.0" mnemonicParsing="false" onMouseClicked="#ClickInsert" text="Add" />
+            <Button fx:id="btnUpdate" layoutX="341.0" layoutY="215.0" mnemonicParsing="false" onMouseClicked="#ClickUpdate" text="Update" />
+            <Button fx:id="btnDelete" layoutX="483.0" layoutY="215.0" mnemonicParsing="false" onMouseClicked="#ClickDelete" text="Delete" />
+            <Button fx:id="btnClose" layoutX="671.0" layoutY="215.0" mnemonicParsing="false" onMouseClicked="#ClickClose" text="Close" />
+            
+                  <TextField fx:id="EmName" layoutX="32.0" layoutY="34.0" />
+            <TextField fx:id="EmSex" layoutX="32.0" layoutY="97.0" />
+            <TextField fx:id="EmDOB" layoutX="344.0" layoutY="34.0" />
+            <TextField fx:id="EmCitizenID" layoutX="344.0" layoutY="97.0" />
+            <TextField fx:id="EmPosition" layoutX="573.0" layoutY="97.0" />
+            <TextField fx:id="EmPhoneNumber" layoutX="573.0" layoutY="34.0" />
+            <TextField fx:id="EmID" layoutX="32.0" layoutY="154.0" promptText="Employee ID" />
+         </children>
+      </Pane>
+      <Pane layoutX="8.0" layoutY="293.0" prefHeight="317.0" prefWidth="886.0" style="-fx-background-color: #fff; -fx-background-radius: 10px;">
+         <children>
+            <TableView fx:id="tbaView" layoutX="8.0" layoutY="13.0" prefHeight="295.0" prefWidth="870.0" style="-fx-background-radius: 10px;">
+              <columns>
+                <TableColumn prefWidth="165.0" text="Employee ID" />
+                <TableColumn prefWidth="152.0" text="Employee Name" />
+                  <TableColumn minWidth="0.0" prefWidth="77.0" text="Sex" />
+                  <TableColumn minWidth="0.0" prefWidth="109.0" text="DOB" />
+                  <TableColumn minWidth="0.0" prefWidth="112.0" text="Citizen ID" />
+                  <TableColumn minWidth="0.0" prefWidth="104.0" text="Position" />
+                  <TableColumn minWidth="0.0" prefWidth="150.0" text="Phone number" />
+              </columns>
+            </TableView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

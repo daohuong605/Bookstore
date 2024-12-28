@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="756.0" prefWidth="788.0" style="-fx-background-color: #ccc;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.DashboardController">
+   <children>
+      <Pane layoutX="8.0" layoutY="14.0" prefHeight="149.0" prefWidth="256.0" style="-fx-background-color: #fff; -fx-background-radius: 10px;">
+         <children>
+            <TextField fx:id="text1" layoutX="12.0" layoutY="14.0" prefHeight="96.0" prefWidth="232.0" style="-fx-background-color: #fff; -fx-background-radius: 10px;">
+               <font>
+                  <Font name="System Bold" size="45.0" />
+               </font>
+            </TextField>
+            <Label layoutX="50.0" layoutY="113.0" text="Total Revenues ($)">
+               <font>
+                  <Font name="System Bold Italic" size="19.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="8.0" layoutY="170.0" prefHeight="288.0" prefWidth="390.0" style="-fx-background-color: #fff; -fx-background-radius: 10px;">
+         <children>
+            <BarChart fx:id="barChart1" layoutX="9.0" layoutY="11.0" prefHeight="277.0" prefWidth="368.0">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </BarChart>
+         </children>
+      </Pane>
+      <Pane layoutX="8.0" layoutY="469.0" prefHeight="277.0" prefWidth="774.0" style="-fx-background-color: #fff; -fx-background-radius: 10px;">
+         <children>
+            <TableView fx:id="tableView" layoutX="10.0" layoutY="13.0" prefHeight="259.0" prefWidth="756.0" style="-fx-background-color: #fff; -fx-background-radius: 10px;">
+              <columns>
+                <TableColumn fx:id="column1" prefWidth="360.0" text="Genre Name" />
+                <TableColumn fx:id="column2" minWidth="0.0" prefWidth="110.0" text="Total Sold" />
+                  <TableColumn fx:id="column3" minWidth="0.0" prefWidth="130.0" text="Total Revenue" />
+                  <TableColumn fx:id="column4" minWidth="0.0" prefWidth="154.0" text="Total Stock" />
+              </columns>
+            </TableView>
+         </children>
+      </Pane>
+      <Pane layoutX="404.0" layoutY="170.0" prefHeight="288.0" prefWidth="377.0" style="-fx-background-color: #fff; -fx-background-radius: 10px;">
+         <children>
+            <BarChart fx:id="barChart2" layoutX="8.0" layoutY="12.0" prefHeight="269.0" prefWidth="362.0" style="-fx-border-radius: 10px;">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </BarChart>
+         </children>
+      </Pane>
+      <Pane layoutX="272.0" layoutY="14.0" prefHeight="149.0" prefWidth="242.0" style="-fx-background-color: #fff; -fx-background-radius: 10px;">
+         <children>
+            <TextField fx:id="text2" layoutX="28.0" layoutY="14.0" prefHeight="92.0" prefWidth="186.0" style="-fx-background-color: #fff; -fx-background-radius: 10px;">
+               <font>
+                  <Font name="System Bold" size="45.0" />
+               </font>
+            </TextField>
+            <Label layoutX="53.0" layoutY="110.0" text="Total Customers">
+               <font>
+                  <Font name="System Bold Italic" size="19.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="524.0" layoutY="14.0" prefHeight="149.0" prefWidth="256.0" style="-fx-background-color: #fff; -fx-background-radius: 10px;">
+         <children>
+            <TextField fx:id="text3" layoutX="35.0" layoutY="14.0" prefHeight="92.0" prefWidth="186.0" style="-fx-background-color: #fff; -fx-background-radius: 10px;">
+               <font>
+                  <Font name="System Bold" size="45.0" />
+               </font>
+            </TextField>
+            <Label layoutX="53.0" layoutY="108.0" text="Total Books">
+               <font>
+                  <Font name="System Bold Italic" size="19.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

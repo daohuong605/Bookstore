@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="618.0" prefWidth="901.0" style="-fx-background-color: #ccc;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.OrderDetailController">
+   <children>
+      <Pane layoutX="8.0" layoutY="11.0" prefHeight="271.0" prefWidth="886.0" style="-fx-background-color: #fff; -fx-background-radius: 10px;">
+         <children>
+            <Label layoutX="116.0" layoutY="88.0" text="Customer Name" />
+            <Label layoutX="116.0" layoutY="126.0" text="Employee Name" />
+            
+            <Button fx:id="btnSave" layoutX="460.0" layoutY="213.0" mnemonicParsing="false" onMouseClicked="#onSaveOrder" prefHeight="31.0" prefWidth="64.0" text="Save" />
+            <Button fx:id="btnCancel" layoutX="566.0" layoutY="213.0" mnemonicParsing="false" onMouseClicked="#onClose" prefHeight="31.0" prefWidth="64.0" text="Cancel" />
+            <ComboBox fx:id="cboCustomer" layoutX="241.0" layoutY="83.0" prefHeight="31.0" prefWidth="160.0" />
+            <ComboBox fx:id="cboEmployee" layoutX="241.0" layoutY="121.0" prefHeight="31.0" prefWidth="160.0" />
+            <DatePicker fx:id="dpOrderDate" layoutX="241.0" layoutY="43.0" prefHeight="31.0" prefWidth="160.0" />
+            <Label layoutX="466.0" layoutY="43.0" text="Book Title" />
+            <ComboBox fx:id="cboBook" layoutX="537.0" layoutY="46.0" prefWidth="150.0" />
+            <Label layoutX="116.0" layoutY="52.0" text="Date" />
+            <Label layoutX="466.0" layoutY="90.0" text="Quantity" />
+            <TextField fx:id="txtQuantity" layoutX="538.0" layoutY="86.0" />
+            <Button layoutX="241.0" layoutY="213.0" mnemonicParsing="false" onMouseClicked="#onAddBook" prefHeight="31.0" prefWidth="55.0" text="Add" />
+            <Button layoutX="357.0" layoutY="213.0" mnemonicParsing="false" onMouseClicked="#onUpdateBook" prefHeight="31.0" prefWidth="55.0" text="Update" />
+            <Label layoutX="466.0" layoutY="123.0" text="Status" />
+            <ComboBox fx:id="cboStatus" layoutX="537.0" layoutY="126.0" prefWidth="150.0" />
+         </children>
+      </Pane>
+      <Pane layoutX="8.0" layoutY="293.0" prefHeight="317.0" prefWidth="886.0" style="-fx-background-color: #fff; -fx-background-radius: 10px;">
+         <children>
+            <TableView fx:id="tbaDetail" layoutX="8.0" layoutY="13.0" prefHeight="247.0" prefWidth="870.0" style="-fx-background-radius: 10px;">
+              <columns>
+                <TableColumn fx:id="colBookTitle" prefWidth="403.0" text="Book Title" />
+                <TableColumn fx:id="colQuantity" prefWidth="155.0" text="Quantity" />
+                  <TableColumn fx:id="colPrice" minWidth="0.0" prefWidth="138.0" text="Price" />
+                  <TableColumn fx:id="colSubtotal" minWidth="0.0" prefWidth="173.0" text="Subtotal" />
+              </columns>
+            </TableView>
+            <Label layoutX="666.0" layoutY="273.0" text="Total">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtTotalAmount" layoutX="721.0" layoutY="268.0" prefHeight="31.0" prefWidth="136.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
