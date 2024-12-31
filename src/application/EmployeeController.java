@@ -1,11 +1,15 @@
 package application;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.sql.*;
 
 import dto.employee; // Correct class name with capital 'E'
@@ -22,15 +26,23 @@ public class EmployeeController {
     private Connection conn;
 
     @FXML
-    private void ClickClose(MouseEvent env) {
+    public void onClose(MouseEvent event) {
         try {
-            if (conn != null && !conn.isClosed()) {
-                conn.close();
-            }
-            Stage primaryStage = (Stage) btnClose.getScene().getWindow();
-            primaryStage.close();
-        } catch (SQLException e) {
-            System.out.println("Error closing connection: " + e.getMessage());
+            // Load giao diện layout.fxml
+            FXMLLoader layoutLoader = new FXMLLoader(getClass().getResource("/ui/layout.fxml"));
+            Parent layoutRoot = layoutLoader.load();
+
+            // Lấy controller của layout.fxml
+            MainController layoutController = layoutLoader.getController();
+
+            // Hiển thị layout.fxml trong stage hiện tại
+            Stage stage = (Stage) btnClose.getScene().getWindow();
+            Scene scene = new Scene(layoutRoot);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Do not load file layout.fxml");
         }
     }
 
@@ -89,7 +101,7 @@ public class EmployeeController {
 
         String query = "DELETE FROM Employee WHERE EmployeeID = ?";
         try (PreparedStatement pstmt = conn.prepareStatement(query)) {
-            pstmt.setInt(1, Integer.parseInt(EmID.getText())); // Lấy EmployeeID từ TextField
+            pstmt.setInt(1, Integer.parseInt(EmID.getText())); 
             int rowsDeleted = pstmt.executeUpdate();
             if (rowsDeleted > 0) {
                 System.out.println("Employee deleted successfully!");
@@ -164,11 +176,11 @@ public class EmployeeController {
         if (event.getClickCount() == 2) { // Double click
             employee selectedEmployee = tbaView.getSelectionModel().getSelectedItem();
             if (selectedEmployee != null) {
-                // Populate the form fields with the selected employee's data
+                
                 EmID.setText(String.valueOf(selectedEmployee.getEmployeeId()));
                 EmName.setText(selectedEmployee.getEmployeeName());
                 EmSex.setText(selectedEmployee.getSex());
-                EmDOB.setText(selectedEmployee.getDob()); // Convert DOB (Date) to String if needed
+                EmDOB.setText(selectedEmployee.getDob()); 
                 EmCitizenID.setText(selectedEmployee.getCitizenId());
                 EmPosition.setText(selectedEmployee.getPosition());
                 EmPhoneNumber.setText(selectedEmployee.getPhoneNumber());

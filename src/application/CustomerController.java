@@ -144,7 +144,7 @@ public class CustomerController {
 
         tbaView.getColumns().addAll(customerIDCol, customerNameCol, emailCol, phoneCol, addressCol);
 
-        String[] add = {" Cau Giay District - Ha Noi ", " Bac Tu Liem District - Ha Noi ", " Lac Long Quan Street - Ha Noi ", " Nam Tu Liem District - Ha Noi "," Hai Ba Trung District - Ha Noi ", " Thai Binh ", " Nam Dinh ", " Hoa Binh ", " Hung Yen ", " Ninh Binh " };
+        String[] add = {" Cau Giay District - Ha Noi ", " Bac Tu Liem District - Ha Noi ", " Lac Long Quan Street - Ha Noi ", " Nam Tu Liem District - Ha Noi "," Hai Ba Trung District - Ha Noi ", " Thai Binh ", " Nam Dinh ", " Hoa Binh ", " Hung Yen ", " Ninh Binh ", "Other" };
         cboAddress.getItems().addAll(add);
 
         try {
@@ -158,17 +158,7 @@ public class CustomerController {
         }
     }
 
-    @FXML
-    private void ClickAddInfor(MouseEvent mnv) {
-        customer customer = new customer(
-                txtID.getText(),
-                txtName.getText(),
-                txtEmail.getText(),
-                txtPhone.getText(),
-                cboAddress.getValue()
-        );
-        tbaView.getItems().add(customer);
-    }
+    
 
     @FXML
     private void ClickTableView(MouseEvent event) {

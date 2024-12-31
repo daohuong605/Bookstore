@@ -1,14 +1,19 @@
 package application;
 
 import dto.OrderDetail;
+
 import dto.order;
 import javafx.collections.*;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.sql.*;
 
 public class OrderDetailController {
@@ -215,9 +220,34 @@ public class OrderDetailController {
 
     @FXML
     public void onClose(MouseEvent event) {
-        Stage stage = (Stage) btnCancel.getScene().getWindow();
-        stage.close();
+        try {
+            // Load giao diện layout.fxml
+            FXMLLoader layoutLoader = new FXMLLoader(getClass().getResource("/ui/layout.fxml"));
+            Parent layoutRoot = layoutLoader.load();
+
+            // Lấy controller của layout.fxml
+            MainController layoutController = layoutLoader.getController();
+
+            // Load nội dung từ order.fxml
+            FXMLLoader orderLoader = new FXMLLoader(getClass().getResource("/ui/order.fxml"));
+            Parent orderRoot = orderLoader.load();
+
+            // Chèn order.fxml vào contentPane trong layout.fxml thông qua setContent
+            layoutController.setContent(orderRoot);
+
+            // Hiển thị layout.fxml trong Stage hiện tại
+            Stage stage = (Stage) btnCancel.getScene().getWindow();
+            Scene scene = new Scene(layoutRoot); // Tạo scene từ layout.fxml
+            stage.setScene(scene);
+            stage.show(); // Hiển thị giao diện
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Không thể tải layout.fxml hoặc order.fxml");
+        }
     }
+
+
 
 	public void setOrderData(order order) {
 		// TODO Auto-generated method stub

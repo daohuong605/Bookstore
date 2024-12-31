@@ -2,6 +2,7 @@ package application;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -11,11 +12,17 @@ import java.io.IOException;
 public class MainController {
 
     @FXML
-    private AnchorPane placeholderPane; 
+    private AnchorPane placeholderPane; // Vùng chứa nội dung động
 
     @FXML
     public void initialize() {
-        loadHomePage(); 
+        loadHomePage();  // Load trang chủ mặc định khi bắt đầu
+    }
+
+    // Phương thức setContent sẽ thay thế nội dung của placeholderPane
+    public void setContent(Parent orderRoot) {
+        placeholderPane.getChildren().clear(); // Xóa nội dung cũ (nếu có)
+        placeholderPane.getChildren().add(orderRoot); // Thêm nội dung mới (order.fxml)
     }
 
     @FXML
@@ -84,16 +91,28 @@ public class MainController {
     }
     
     private void loadOrderPage() {
-        AnchorPane genrePage = createPageFromFXML("/ui/order.fxml");
-        placeholderPane.getChildren().setAll(genrePage); 
+        AnchorPane orderPage = createPageFromFXML("/ui/order.fxml");
+        placeholderPane.getChildren().setAll(orderPage); 
     }
     
     private void loadOrderDetailPage() {
-        AnchorPane genrePage = createPageFromFXML("/ui/details.fxml");
-        placeholderPane.getChildren().setAll(genrePage); 
+        AnchorPane orderDetailPage = createPageFromFXML("/ui/details.fxml");
+        placeholderPane.getChildren().setAll(orderDetailPage); 
     }
 
-    
+    private AnchorPane createPageFromFXML(String fxmlFile) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
+            AnchorPane page = loader.load();
+            page.setPrefSize(941, 736);  // Đảm bảo kích thước phù hợp
+            page.setStyle("-fx-background-color: #f5f5f5;");
+            return page;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return new AnchorPane(); 
+        }
+    }
+
     @FXML
     private void logout() {
         try {
@@ -113,19 +132,6 @@ public class MainController {
 
         } catch (IOException e) {
             e.printStackTrace();
-        }
-    }
-
-    private AnchorPane createPageFromFXML(String fxmlFile) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
-            AnchorPane page = loader.load(); 
-            page.setPrefSize(941, 736); 
-            page.setStyle("-fx-background-color: #f5f5f5;");
-            return page;
-        } catch (IOException e) {
-            e.printStackTrace();
-            return new AnchorPane(); 
         }
     }
 }
